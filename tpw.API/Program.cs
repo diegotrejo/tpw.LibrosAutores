@@ -9,7 +9,9 @@ namespace tpw.API
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddDbContext<DbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext") ?? throw new InvalidOperationException("Connection string 'DbContext' not found.")));
+                //options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext") ?? 
+                options.UseSqlite(builder.Configuration.GetConnectionString("DbContext") ??
+                throw new InvalidOperationException("Connection string 'DbContext' not found.")));
 
             // contorla la generacion de json infinito
             // Add services to the container.
@@ -29,7 +31,7 @@ namespace tpw.API
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
+            //if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();

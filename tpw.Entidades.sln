@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tpw.APIConsumer", "tpw.APIC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tpw.test", "tpw.test\tpw.test.csproj", "{773FDEA7-B1FD-4633-8F17-57E41ADE1CC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tpw.Web.MVC", "tpw.Web.MVC\tpw.Web.MVC.csproj", "{C9C851C7-A831-493C-B490-88626DBF08AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tpw.Web.MVC", "tpw.Web.MVC\tpw.Web.MVC.csproj", "{C9C851C7-A831-493C-B490-88626DBF08AE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tpw.AppMovil.MAUI", "tpw.AppMovil.MAUI\tpw.AppMovil.MAUI.csproj", "{D51453CC-3EE6-484A-BE18-E736CA375F30}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,12 @@ Global
 		{C9C851C7-A831-493C-B490-88626DBF08AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9C851C7-A831-493C-B490-88626DBF08AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9C851C7-A831-493C-B490-88626DBF08AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51453CC-3EE6-484A-BE18-E736CA375F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D51453CC-3EE6-484A-BE18-E736CA375F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D51453CC-3EE6-484A-BE18-E736CA375F30}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{D51453CC-3EE6-484A-BE18-E736CA375F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D51453CC-3EE6-484A-BE18-E736CA375F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D51453CC-3EE6-484A-BE18-E736CA375F30}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

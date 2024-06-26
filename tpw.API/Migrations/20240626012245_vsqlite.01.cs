@@ -5,7 +5,7 @@
 namespace tpw.API.Migrations
 {
     /// <inheritdoc />
-    public partial class v1 : Migration
+    public partial class vsqlite01 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,11 +14,11 @@ namespace tpw.API.Migrations
                 name: "Autores",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AñoNacimiento = table.Column<int>(type: "int", nullable: false),
-                    Nacionalidad = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Nombre = table.Column<string>(type: "TEXT", nullable: false),
+                    AñoNacimiento = table.Column<int>(type: "INTEGER", nullable: false),
+                    Nacionalidad = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -29,9 +29,9 @@ namespace tpw.API.Migrations
                 name: "Generos",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Descripcion = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,15 +42,15 @@ namespace tpw.API.Migrations
                 name: "Libros",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Titulo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Resumen = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AñoPublicacion = table.Column<int>(type: "int", nullable: false),
-                    Isbn = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    NroPaginas = table.Column<int>(type: "int", nullable: false),
-                    GeneroId = table.Column<int>(type: "int", nullable: false),
-                    AutorId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Titulo = table.Column<string>(type: "TEXT", nullable: false),
+                    Resumen = table.Column<string>(type: "TEXT", nullable: false),
+                    AñoPublicacion = table.Column<int>(type: "INTEGER", nullable: false),
+                    Isbn = table.Column<string>(type: "TEXT", nullable: false),
+                    NroPaginas = table.Column<int>(type: "INTEGER", nullable: false),
+                    GeneroId = table.Column<int>(type: "INTEGER", nullable: true),
+                    AutorId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -59,14 +59,12 @@ namespace tpw.API.Migrations
                         name: "FK_Libros_Autores_AutorId",
                         column: x => x.AutorId,
                         principalTable: "Autores",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Libros_Generos_GeneroId",
                         column: x => x.GeneroId,
                         principalTable: "Generos",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="tpw.AppMovil.MAUI.CrudDesdeAPI"
+             Title="CrudDesdeAPI">
+    <VerticalStackLayout>
+        <Label 
+            Text="CRUD DE GÉNEROS LITERAROS"  />
+        
+        <Label Text="Código de Género"></Label>
+        <Entry x:Name="txtIdGenero"></Entry>
+
+        <Label Text="Descripción"></Label>
+        <Entry x:Name="txtDescripcion"></Entry>
+
+        <Button x:Name="cmdNuevo"      Clicked="cmdNuevo_Clicked"       Text="INSERTAR"></Button>
+        <Button x:Name="cmdActualizar" Clicked="cmdActualizar_Clicked"  Text="ACTUALZIAR"></Button>
+        <Button x:Name="cmdConsultar"  Clicked="cmdConsultar_Clicked"   Text="CONSULTAR"></Button>
+        <Button x:Name="cmdBorrar"     Clicked="cmdBorrar_Clicked"      Text="BORRAR" ></Button>
+        
+    </VerticalStackLayout>
+</ContentPage>
